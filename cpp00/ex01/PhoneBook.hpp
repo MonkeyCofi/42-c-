@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 23:59:33 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/07 22:03:03 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/08/25 21:09:54 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,14 @@
 # define PHONEBOOK_HPP
 
 # include <iostream>
-
-typedef std::string str;
-
-class Contact
-{
-	private:
-		str FirstName;
-		str LastName;
-		str NickName;
-		str PhoneNumber;
-		str DarkestSecret;
-};
+# include "Contact.hpp"
 
 class PhoneBook
 {
 	private:
-		Contact Contacts[9];
+		Contact	contacts[8];
 	public:
-		PhoneBook(str First_name, str Last_name, str nickname, str Phone_number, str darkest_secret);
+		void	add_contact(Contact contact);
 };
 
 #endif
