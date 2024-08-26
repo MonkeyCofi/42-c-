@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 20:40:14 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/25 21:34:51 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/08/26 17:46:33 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,29 @@
 
 int main(void)
 {
-	std::string input;
-	PhoneBook	phonebook;
-	Contact		contact;
-	
+	std::string 	input;
+	PhoneBook		phonebook;
+	unsigned short	current;
+
+	current = 0;
 	while (1)
 	{
-		std::cout << "Possible operations: ADD SEARCH EXIT" << std::endl;
-		std::cout << "Enter Operation: ";
-		std::cin >> input;
+		std::cout << "------------------------------" << std::endl;
+		std::cout << "Possible operations: " << "\x1b[35m" << "ADD SEARCH EXIT" << "\x1b[0m" << std::endl;
+		std::cout << "\x1b[32m" << "Enter Operation: " << "\x1b[0m";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+			return (1);
 		if (input == "ADD")
-			phonebook.add_contact(contact);
-		if (input == "EXIT")
-			break ;
+			phonebook.add_contact(current++);
+		else if (input == "SEARCH")
+			 phonebook.search_contact(current);
+		else if (input == "EXIT")
+			return (0);
+		if (current == 8)
+		{
+			current = 0;
+			phonebook.is_full();
+		}
 	}
 }

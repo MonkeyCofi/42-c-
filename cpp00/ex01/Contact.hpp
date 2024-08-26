@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 19:28:03 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/25 21:36:41 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/08/26 19:21:17 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 class Contact
 {
 	private:
+		void		print_query(std::string str);
+		bool		m_empty;
 		std::string m_firstName;
 		std::string m_lastName;
 		std::string m_phoneNumber;
@@ -26,8 +28,12 @@ class Contact
 		void		setNames();
 		void		setNumber();
 		void		setSecret();
+		void		setNonEmpty();
+		bool		isEmpty();
 		std::string	getFirst() const;
-		void		getLast() const;
-		void		getNumber() const;
-		void		getSecret() const;
+		std::string	getLast() const;
+		std::string	getNumber() const;
+		std::string	getSecret() const;
+		std::string getNick() const;
+		Contact();
 };
