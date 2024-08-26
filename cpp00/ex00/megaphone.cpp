@@ -6,17 +6,11 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 14:03:55 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/07 14:04:27 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/08/17 15:51:44 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-int print(char c)
-{
-	std::cout << c; 
-	return (1);
-}
 
 int main(int ac, char **av)
 {
