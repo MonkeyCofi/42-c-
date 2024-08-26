@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 00:00:54 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/26 19:27:38 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/08/26 19:48:04 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,15 @@ void	PhoneBook::print_top_row() const
 void	PhoneBook::search_contact(unsigned short index)
 {
 	std::string	input;
+	int			num;
+
 	if (check_full())
 		index = 8;
+	if (contacts[0].isEmpty())
+	{
+		std::cout << "\x1b[31m" << "The table is currently empty" << "\x1b[0m" << std::endl;
+		return ;
+	}
 	print_top_row();
 	for (unsigned short i = 0; i < index; i++)
 	{
@@ -55,7 +62,9 @@ void	PhoneBook::search_contact(unsigned short index)
 	}
 	std::cout << "\x1b[33m" <<  "Enter index to search: " << "\x1b[0m";
 	std::getline(std::cin, input);
-	int	num = atoi(input.c_str());
+	if (std::cin.eof())
+		exit(1);
+	num = atoi(input.c_str());
 	if (contacts[num].isEmpty())
 	{
 		std::cout << "\x1b[31m" << "Contact at index " << num << " is empty" << "\x1b[0m" << std::endl;
@@ -66,6 +75,7 @@ void	PhoneBook::search_contact(unsigned short index)
 		std::cout << "\x1b[31m" <<  "Number is out of range"  << "\x1b[0m" << std::endl;
 		return ;
 	}
+	std::cout << "------------------------------" << std::endl;
 	std::cout << "First name: " << contacts[num].getFirst() << std::endl;
 	std::cout << "Last name: " << contacts[num].getLast() << std::endl;
 	std::cout << "Nickname: " << contacts[num].getNick() << std::endl;

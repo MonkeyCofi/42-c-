@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 19:33:48 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/26 19:31:21 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/08/26 19:43:51 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,31 @@ void	Contact::print_query(std::string str)
 
 int	valid_input(std::string &str, int num_check)
 {
-	if (str.empty() || str.at(0) == '\0' || str.at(0) == '\t' || str.at(0) == '\n')
-		return (0);
 	if (std::cin.eof())
 		exit(1);
-	if (num_check)
+	size_t	length = str.length();
+	if (str.empty() || str.at(0) == '\0' || str.at(0) == '\t' || str.at(0) == '\n')
+		return (0);
+	if (num_check == 1)
 	{
-		for (int i = 0, len = str.length(); i < len; i++)
+		for (size_t i = 0; i < length; i++)
 		{
 			if (!(str.at(i) >= '0' && str.at(i) <= '9'))
 			{
-				std::cout << "\x1b[31m" << "Number is invalid" << std::endl;
+				std::cout << "\x1b[31m" << "Number is invalid" << "\x1b[0m" << std::endl;
+				return (0);
+			}
+		}
+	}
+	else if (num_check == 2)
+	{
+		for (size_t i = 0; i < length; i++)
+		{
+			if (isspace(str.at(i)))
+				continue ;
+			if (!(isalpha(str.at(i))))
+			{
+				std::cout << "\x1b[31m" << "Names can only contain alphabets" << "\x1b[0m" << std::endl;
 				return (0);
 			}
 		}
@@ -66,13 +80,13 @@ void Contact::setNames()
 	std::string	last;
 	std::string	nick;
 
-	while (!valid_input(first, 0))
+	while (!valid_input(first, 2))
 	{
 		print_query("Enter first name: ");
 		std::getline(std::cin, first);
 	}
 	m_firstName = first;
-	while (!valid_input(last, 0))
+	while (!valid_input(last, 2))
 	{
 		print_query("Enter last name: ");
 		std::getline(std::cin, last);
