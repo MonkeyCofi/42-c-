@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:12:32 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/28 15:54:53 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/08/28 15:58:11 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	Account::_displayTimestamp(void)
 	std::tm *ti = std::localtime(&t);
 	std::cout << "[" << ti->tm_year + 1900 << std::setw(2) << std::setfill('0') << ti->tm_mon + 1 << \
 	std::setw(2) << std::setfill('0') << ti->tm_mday << "_" << std::setw(2) << std::setfill('0') << ti->tm_hour << \
-	std::setw(2) << std::setfill('0') << ti->tm_min << std::setw(2) << std::setfill('0') << ti->tm_sec << "]";
+	std::setw(2) << std::setfill('0') << ti->tm_min << std::setw(2) << std::setfill('0') << ti->tm_sec << "] ";
 };
 
 void	Account::makeDeposit(int deposit)
