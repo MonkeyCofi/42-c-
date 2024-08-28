@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 20:12:32 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/28 15:58:11 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/08/28 16:06:31 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ Account::Account( int initial_deposit )
 	_nbAccounts++;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";" << "amount:" << _amount << ";" << "created" \
-	<< std::endl;
+		<< std::endl;
 };
 
 Account::~Account()
 {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";" << "amount:" << _amount << ";" << "closed" \
-	<< std::endl;
+		<< std::endl;
 };
 
 void	Account::_displayTimestamp(void)
@@ -44,15 +44,15 @@ void	Account::_displayTimestamp(void)
 	std::time_t	t = std::time(NULL);
 	std::tm *ti = std::localtime(&t);
 	std::cout << "[" << ti->tm_year + 1900 << std::setw(2) << std::setfill('0') << ti->tm_mon + 1 << \
-	std::setw(2) << std::setfill('0') << ti->tm_mday << "_" << std::setw(2) << std::setfill('0') << ti->tm_hour << \
-	std::setw(2) << std::setfill('0') << ti->tm_min << std::setw(2) << std::setfill('0') << ti->tm_sec << "] ";
+		std::setw(2) << std::setfill('0') << ti->tm_mday << "_" << std::setw(2) << std::setfill('0') << ti->tm_hour << \
+			std::setw(2) << std::setfill('0') << ti->tm_min << std::setw(2) << std::setfill('0') << ti->tm_sec << "] ";
 };
 
 void	Account::makeDeposit(int deposit)
 {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";" << "p_amount:" << _amount << ";" \
-	"deposit:" << deposit << ";";
+		"deposit:" << deposit << ";";
 	_totalNbDeposits += 1;
 	_amount += deposit;
 	_totalAmount += deposit;
@@ -75,7 +75,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	if (result)
 	{
 		std::cout << "withdrawal:" << withdrawal << ";" << "amount:" << _amount << ";" \
-		<< "nb_withdrawals:" << _nbWithdrawals << std::endl;
+			<< "nb_withdrawals:" << _nbWithdrawals << std::endl;
 	}
 	else
 		std::cout << "withdrawal:" << "refused" << std::endl;
@@ -91,7 +91,7 @@ void	Account::displayStatus(void) const
 {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";" << "amount:" << checkAmount() << ";" \
-	"deposits:" << _nbDeposits << ";" << "withdrawals:" << _nbWithdrawals << ";" << std::endl;
+		"deposits:" << _nbDeposits << ";" << "withdrawals:" << _nbWithdrawals << ";" << std::endl;
 };
 
 int	Account::getNbAccounts(void)
@@ -118,5 +118,5 @@ void	Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
 	std::cout << "accounts:" << getNbAccounts() << ";" << "total:" << getTotalAmount() << ";" << \
-	"deposits:" << getNbDeposits() << ";" << "withdrawals:" << getNbWithdrawals() << ";" << std::endl;
+		"deposits:" << getNbDeposits() << ";" << "withdrawals:" << getNbWithdrawals() << ";" << std::endl;
 };
