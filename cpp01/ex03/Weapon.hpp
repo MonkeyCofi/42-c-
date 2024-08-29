@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 21:04:36 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/29 21:05:24 by pipolint         ###   ########.fr       */
+/*   Created: 2024/08/29 21:06:04 by pipolint          #+#    #+#             */
+/*   Updated: 2024/08/29 21:18:11 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int main(void)
+#include <iostream>
+
+class Weapon
 {
-	return (1);
-}
+private:
+	std::string	type;
+public:
+	const std::string	getType();
+	void	Weapon::setType(std::string type);
+	Weapon();
+	~Weapon();
+};
+
+#endif
