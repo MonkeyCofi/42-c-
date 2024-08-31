@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 21:04:36 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/29 21:05:24 by pipolint         ###   ########.fr       */
+/*   Created: 2024/08/31 12:06:41 by pipolint          #+#    #+#             */
+/*   Updated: 2024/08/31 12:08:49 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,15 @@
 
 int main(void)
 {
-	return (1);
+	Weapon	Spear = Weapon("Spear");
+	HumanA	Bob = HumanA(Spear, "Bob");
+	Bob.attack();
+	Spear.setType("Sword");
+	Bob.attack();
+
+	HumanB	Joe = HumanB("Joe");
+	Weapon	Longsword = Weapon("Longsword");
+	Joe.attack();
+	Joe.pickWeapon(&Longsword);
+	Joe.attack();
 }

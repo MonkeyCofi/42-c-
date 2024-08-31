@@ -1,16 +1,16 @@
-NAME = unnecessary_violence
+NAME = test
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
+SRCS = main.cpp test.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
+	$(CXX) $(CXXFLAGS) $< -o $^
+	
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 

@@ -1,28 +1,28 @@
 #/bin/zsh
 
-NAME=""
-
-SRCS=""
-
 read -p "Program name: " NAME
 
-read -p "Program sources: " SRCS
+IFS=' ' read -r -p "Program sources: " -a SRCS
+
+for i in ${SRCS[@]}; do
+	touch $i
+done
 
 touch ./Makefile
 
-echo 	\
+echo	\
 "NAME = $NAME
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = $SRCS
+SRCS = ${SRCS[*]}
 
 OBJS = \$(SRCS:.cpp=.o)
 
 %.o: %.cpp
-	\$(CXX) \$(CXXFLAGS) \$< -o \$^
+	\$(CXX) \$(CXXFLAGS) \$< -o \$@
 	
 \$(NAME): \$(OBJS)
 	\$(CXX) \$(CXXFLAGS) \$(OBJS) -o \$(NAME)

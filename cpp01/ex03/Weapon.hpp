@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 21:06:04 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/30 12:40:28 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/08/31 13:51:16 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class Weapon
 private:
 	std::string	type;
 public:
-	const std::string	getType();
-	void	Weapon::setType(std::string type);
-	Weapon();
+	Weapon(std::string weapon_type);
 	~Weapon();
+	const std::string	getType();
+	void	setType(std::string type);
 };
 
 #endif
