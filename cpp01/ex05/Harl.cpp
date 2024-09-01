@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 18:36:56 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/01 14:37:38 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/01 15:58:59 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,37 @@
 
 void	Harl::debug(void)
 {
-	std::cout << "I really love extra olives and pepperoni on my XL sized pizza" << std::endl;
+	std::cout << GREEN << "I really love extra olives and pepperoni on my XL sized pizza" << RESET << std::endl;
 };
 
 void	Harl::info(void)
 {
-	std::cout << "This will print out info" << std::endl;
+	std::cout << BLUE << "Wait what? It costs extra pesos to add a tad bit of olives and pepperoni to my pizza?" << RESET << std::endl;
 };
 
 void	Harl::warning(void)
 {
-	std::cout << "This will print out a warning message" << std::endl;	
+	std::cout << YELLOW << "Listen brother, I just want extra olives and pepperoni on my XL sized pizza for free. I think I am entitled to such a request" << RESET << std::endl;	
 };
 
 void	Harl::error(void)
 {
-	std::cout << "This will be an error" << std::endl;
+	std::cout << RED << "HOY! What is this unacceptable service? 10 years I have been coming here and you're treating me like just came here for the first time in my life!! I will speak to your boss THIS INSTANT!!" << RESET << std::endl;
 };
 
 void	Harl::complain(std::string level)
 {
 	void	(Harl::*complaint[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	
-	for (int i = 0; i < 4; i++)
+	int i = 0;
+	for (; i < 4; i++)
 	{
 		if (level == levels[i])
+		{
 			(this->*complaint[i])();
+			break ;
+		}
 	}
+	if (i == 4)
+		std::cout << CYAN << "Harl is quite happy" << RESET << std::endl;
 };
