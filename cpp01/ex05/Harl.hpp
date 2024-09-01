@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 18:30:35 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/31 18:31:59 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/01 13:37:21 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ class	Harl
 		void	error(void);
 	public:
 		void	complain(std::string level);
-}
+};
 
 #endif
