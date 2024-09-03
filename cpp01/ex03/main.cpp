@@ -16,12 +16,13 @@
 
 int main(void)
 {
-	Weapon	Spear = Weapon("Spear");
-	HumanA	Bob = HumanA(Spear, "Bob");
-	Bob.attack();
-	Spear.setType("Sword");
-	Bob.attack();
-
+	{
+		Weapon	Spear = Weapon("Spear");
+		HumanA	Bob = HumanA(Spear, "Bob");
+		Bob.attack();
+		Spear.setType("Sword");
+		Bob.attack();
+	}
 	HumanB	Joe = HumanB("Joe");
 	Weapon	Longsword = Weapon("Longsword");
 	Joe.attack();

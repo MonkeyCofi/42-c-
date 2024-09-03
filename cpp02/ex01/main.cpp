@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/30 12:13:59 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/03 13:30:55 by pipolint         ###   ########.fr       */
+/*   Created: 2024/09/02 10:42:20 by pipolint          #+#    #+#             */
+/*   Updated: 2024/09/03 13:47:00 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "Fixed.hpp"
 
-HumanA::HumanA(Weapon &weapon_type, std::string name) : weap(weapon_type)
+int main(void)
 {
-	this->name = name;
-};
+	//Fixed	a;
+	//Fixed	b(a);
+	//Fixed	c;
+	
+	//c = b;
 
-HumanA::~HumanA()
-{
-	std::cout << this->name << " has died" << std::endl;
-};
-
-void	HumanA::attack()
-{
-	std::cout << this->name << " attacks " << "with their " << weap.getType() << std::endl;
+	//std::cout << a.getRawBits() << std::endl;
+	//std::cout << b.getRawBits() << std::endl;
+	//std::cout << c.getRawBits() << std::endl;
+	std::cout << (53 >> 1) << std::endl;
 }

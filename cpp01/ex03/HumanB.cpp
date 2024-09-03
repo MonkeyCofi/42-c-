@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 16:35:21 by pipolint          #+#    #+#             */
-/*   Updated: 2024/08/31 14:17:20 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/03 13:31:20 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ HumanB::HumanB(Weapon *weap, std::string name)
 
 HumanB::~HumanB()
 {
-	;
+	std::cout << this->name << " has died" << std::endl;
 };
 
 void	HumanB::attack()

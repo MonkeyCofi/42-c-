@@ -12,7 +12,7 @@ $(NAME): $(SRCS)
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	rm *.replace
 	
 fclean: clean
 	rm -f $(NAME)
