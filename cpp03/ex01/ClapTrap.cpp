@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:57:49 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/05 19:13:46 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/06 17:57:39 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,44 +14,53 @@
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "Parameterized constructor was called" << std::endl;
 	this->Name = name;
 	this->hit_points = 10;
 	this->energy_points = 10;
 	this->attack_damage = 0;
+	std::cout << CYAN <<  "Parameterized constructor for ClapTrap " << this->Name << " was called" << RESET << std::endl;
+};
+
+ClapTrap::ClapTrap(std::string Name, int hit_points, int energy_points, int attack_damage)
+{
+	this->Name = Name;
+	this->hit_points = hit_points;
+	this->energy_points = energy_points;
+	this->attack_damage = attack_damage;	
+	std::cout << CYAN << "Inherited parameterized constructor for ClapTrap " << this->Name <<  " was called" << RESET << std::endl;
 };
 
 ClapTrap::ClapTrap(const ClapTrap &ref)
 {
-	std::cout << "Copy constructor was called" << std::endl;
 	this->Name = ref.Name;
 	this->hit_points = ref.hit_points;
 	this->energy_points = ref.energy_points;
 	this->attack_damage = ref.attack_damage;
+	std::cout << YELLOW <<  "Copy constructor for ClapTrap " << this->Name << " was called" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default constructor was called" << std::endl;
 	this->Name = "Claptrap";
 	this->hit_points = 10;
 	this->energy_points = 10;
 	this->attack_damage = 0;
+	std::cout << BLUE << "Default constructor was called" << RESET << std::endl;
 };
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 {
-	std::cout << "Copy assignment operator was called" << std::endl;
 	this->Name = obj.Name;
 	this->hit_points = obj.hit_points;
 	this->energy_points = obj.energy_points;
 	this->attack_damage = obj.attack_damage;
+	std::cout << "Copy assignment operator for ClapTrap " << this->Name << " was called" << std::endl;
 	return (*this);
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor for ClapTrap " << Name << " was called" << std::endl;
+	std::cout << RED <<  "Destructor for ClapTrap " << Name << " was called" << RESET << std::endl;
 };
 
 std::string	ClapTrap::getName()
@@ -85,3 +94,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->Name << " repairs itself for " << amount << " hit points" << std::endl;
 	this->energy_points--;
 };
+
+int	ClapTrap::getEnergyPoints()
+{
+	return (this->energy_points);
+}
