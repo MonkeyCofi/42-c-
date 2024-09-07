@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:03:05 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/04 17:06:49 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/05 10:56:15 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	Fixed::setRawBits(int const raw)
 
 float 	Fixed::toFloat(void) const
 {
-	return (this->fixedPoint << 8);
+	return (0);
 };
 
 int 	Fixed::toInt(void) const

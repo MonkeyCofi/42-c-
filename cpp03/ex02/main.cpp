@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:50:01 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/07 19:52:06 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/07 19:45:33 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,14 @@ int main(void)
 	{
 		ScavTrap Joe("Joe");
 		ClapTrap Alice("Alice");
-		Alice.attack(Joe.getName());
-		Joe.takeDamage(Alice.getDamage());
 		Joe.attack(Alice.getName());
 		Alice.takeDamage(Joe.getDamage());
+		std::cout << GREEN << "Alice has " << GREEN << Alice.getEnergyPoints() << " energy points" << RESET << std::endl;
+		Alice.beRepaired(Joe.getDamage());
+		std::cout << GREEN << "Alice has " << Alice.getEnergyPoints() << " energy points" << RESET << std::endl;
 		Joe.guardGate();
 	}
 	{
-		std::cout << std::setw(30) << std::setfill('-')  << "-" << std::endl;
-		std::cout << std::setw(30) << std::setfill('-')  << "-" << std::endl;
 		ScavTrap	Alan("Alan");
 		ScavTrap	Lily("Lily");
 		Lily.printStats();
@@ -34,8 +33,6 @@ int main(void)
 		Lily.printStats();
 	}
 	{
-		std::cout << std::setw(30) << std::setfill('-')  << "-" << std::endl;
-		std::cout << std::setw(30) << std::setfill('-')  << "-" << std::endl;
 		ScavTrap	Zero("Zero");
 		ScavTrap	Zero_clone;
 		Zero_clone = Zero;

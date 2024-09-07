@@ -8,6 +8,18 @@ for i in ${SRCS[@]}; do
 	touch $i
 done
 
+IFS=' ' read -r -p "Program includes: " -a INCL
+
+for i in ${INCL[@]}; do
+	touch $i
+done
+
+read -p "Would you like to create a class? " ANS
+
+if [ "$ANS" == "yes" ]; then
+	./class.sh
+fi
+
 touch ./Makefile
 
 echo	\
