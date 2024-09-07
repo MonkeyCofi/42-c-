@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:50:29 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/07 18:14:47 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/07 20:10:29 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class ClapTrap
 		~ClapTrap();
 		ClapTrap(const ClapTrap &ref);
 		ClapTrap 	&operator=(ClapTrap const &obj);
-		ClapTrap(std::string Name, int hit_points, int energy_points, int attack_damage);
 	
 		std::string			getName();
 		virtual void		attack(const std::string &target);
