@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 20:06:07 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/08 17:40:30 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/08 15:48:15 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class	FragTrap : virtual public ClapTrap
+class	FragTrap : public ClapTrap
 {
 	private:
 		std::string Name;
