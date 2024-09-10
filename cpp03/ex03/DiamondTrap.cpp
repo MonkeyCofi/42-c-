@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:00:28 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/10 19:20:19 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/10 20:29:34 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 DiamondTrap::DiamondTrap()
 {
 	this->Name = "DiamondTrap";
-	
+	ClapTrap::setName(ClapTrap::getName() + "_clap_name");
 	this->hit_points = FragTrap::hit_points;
 	this->energy_points = ScavTrap::energy_points;
 	this->attack_damage = FragTrap::attack_damage;
@@ -27,18 +27,20 @@ DiamondTrap::~DiamondTrap()
 	std::cout << RED << "Destructor for DiamondTrap " << this->Name << " was called" << RESET << std::endl;
 };
 
-DiamondTrap::DiamondTrap(std::string Name)
+DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name)
 {
 	this->Name = Name;
+	ClapTrap::setName(ClapTrap::getName() + "_clap_name");
 	this->hit_points = FragTrap::hit_points;
 	this->energy_points = ScavTrap::energy_points;
 	this->attack_damage = FragTrap::attack_damage;
-	std::cout << CYAN << "Parameterized constructor for DiamondTrap " << this->Name << " was called" << std::endl;
+	std::cout << CYAN << "Parameterized constructor for DiamondTrap " << this->Name << " was called" << RESET << std::endl;
 };
 
 DiamondTrap::DiamondTrap(const DiamondTrap &obj)
 {
 	this->Name = obj.Name;
+	ClapTrap::setName(ClapTrap::getName() + "_clap_name");
 	this->hit_points = obj.hit_points;
 	this->energy_points = obj.energy_points;
 	this->attack_damage = obj.attack_damage;
@@ -48,6 +50,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &obj)
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &obj)
 {
 	this->Name = obj.Name;
+	ClapTrap::setName(ClapTrap::getName() + "_clap_trap");
 	this->hit_points = obj.hit_points;
 	this->energy_points = obj.energy_points;
 	this->attack_damage = obj.attack_damage;
@@ -55,7 +58,7 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &obj)
 	return *this;
 };
 
-void	whoAmI(void)
+void	DiamondTrap::whoAmI(void)
 {
-	;
+	std::cout << "My ClapTrap name is " << ClapTrap::getName() << std::endl;
 };
