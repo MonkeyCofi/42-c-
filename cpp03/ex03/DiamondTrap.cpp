@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:00:28 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/10 20:29:34 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/10 20:41:38 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ DiamondTrap::~DiamondTrap()
 	std::cout << RED << "Destructor for DiamondTrap " << this->Name << " was called" << RESET << std::endl;
 };
 
-DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name)
+DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name), FragTrap(Name), ScavTrap(Name)
 {
 	this->Name = Name;
 	ClapTrap::setName(ClapTrap::getName() + "_clap_name");
@@ -56,6 +56,11 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &obj)
 	this->attack_damage = obj.attack_damage;
 	std::cout << CYAN << "Copy assignment operation for DiamondTrap " << this->Name << " was called" << RESET << std::endl;
 	return *this;
+};
+
+void	DiamondTrap::attack(const std::string &target)
+{
+	ScavTrap::attack(target);
 };
 
 void	DiamondTrap::whoAmI(void)
