@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:23:55 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/12 11:21:11 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/12 12:24:08 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	Dog : public Animal
 		Dog(std::string type);
 		Dog(const Dog &obj);
 		Dog	&operator=(const Dog &obj);
-		void	makeSound();
+		virtual void	makeSound();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:58:57 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/11 15:46:08 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/12 12:29:27 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cat::Cat(std::string type)
 	std::cout << "Parameterized constructor for Cat was called" << std::endl;
 };
 
-Cat::Cat(const Cat &obj)
+Cat::Cat(const Cat &obj) : Animal(obj)
 {
 	this->type = obj.type;
 	std::cout << "Copy constructor for Cat was called" << std::endl;

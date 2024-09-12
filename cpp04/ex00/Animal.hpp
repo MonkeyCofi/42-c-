@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:41:44 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/12 11:11:03 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/12 12:31:31 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	Animal
 		std::string type;
 	public:
 		Animal();
-		~Animal();
+		virtual ~Animal();
 		Animal(std::string type);
 		Animal(const Animal &obj);
 		Animal	&operator=(const Animal &obj);

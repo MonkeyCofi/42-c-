@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 15:24:37 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/12 10:35:05 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/12 12:29:05 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Dog::~Dog()
 	std::cout << "Destructor for Dog was called" << std::endl;
 };
 
-Dog::Dog(const Dog &obj)
+Dog::Dog(const Dog &obj) : Animal(obj)
 {
 	this->type = obj.type;
 	std::cout << "Copy constructor for Dog was called" << std::endl;

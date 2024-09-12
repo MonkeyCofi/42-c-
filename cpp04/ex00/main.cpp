@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 13:28:24 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/12 11:11:40 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/12 12:32:05 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(void)
 	dog->makeSound();
 	cat->makeSound();
 
-	delete animal;
 	delete cat;
 	delete dog;
+	delete animal;
 }
