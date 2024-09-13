@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 17:57:49 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/07 19:42:49 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/13 13:07:19 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 	this->hit_points = obj.hit_points;
 	this->energy_points = obj.energy_points;
 	this->attack_damage = obj.attack_damage;
-	std::cout << "Copy assignment operator for ClapTrap " << this->Name << " was called" << std::endl;
+	std::cout << YELLOW << "Copy assignment operator for ClapTrap " << this->Name << " was called" << RESET << std::endl;
 	return (*this);
 }
 

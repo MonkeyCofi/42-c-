@@ -34,7 +34,7 @@ SRCS = ${SRCS[*]}
 OBJS = \$(SRCS:.cpp=.o)
 
 %.o: %.cpp
-	\$(CXX) \$(CXXFLAGS) \$< -o \$@
+	\$(CXX) \$(CXXFLAGS) -c \$< -o \$@
 	
 \$(NAME): \$(OBJS)
 	\$(CXX) \$(CXXFLAGS) \$(OBJS) -o \$(NAME)
