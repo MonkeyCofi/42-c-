@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:58:57 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/13 13:21:19 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/14 13:05:09 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 Cat::Cat()
 {
 	type = "Cat";
+	brain = new Brain();
 	std::cout << BLUE << "Default constructor for Cat was called" << RESET << std::endl;
 };
 
 Cat::~Cat()
 {
+	delete brain;
 	std::cout << RED << "Destructor for Cat was called" << RESET << std::endl;
 };
 

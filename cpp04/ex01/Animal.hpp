@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:41:44 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/13 13:05:28 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/14 12:58:10 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ANIMAL_HPP
 
 # include <iostream>
+# include "Brain.hpp"
 
 # define RESET "\e[0m"
 # define BLUE "\e[0;34m"

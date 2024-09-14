@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 15:23:55 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/14 12:58:00 by pipolint         ###   ########.fr       */
+/*   Created: 2024/09/14 12:44:44 by pipolint          #+#    #+#             */
+/*   Updated: 2024/09/14 13:06:46 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Animal.hpp"
+# include <iostream>
 
-class	Dog : public Animal
+# define RESET "\e[0m"
+# define BLUE "\e[0;34m"
+# define GREEN "\e[0;32m"
+# define YELLOW "\e[1;33m"
+# define RED "\e[0;31m"
+# define CYAN "\e[0;36m"
+
+class	Brain
 {
 	private:
-		Brain	*brain;
+		std::string ideas[100];
 	public:
-		Dog();
-		~Dog();
-		Dog(std::string type);
-		Dog(const Dog &obj);
-		Dog	&operator=(const Dog &obj);
-		virtual void	makeSound();
+		Brain();
+		~Brain();
+		Brain(const Brain &obj);
+		Brain	&operator=(const Brain &obj);
 };
 
 #endif
