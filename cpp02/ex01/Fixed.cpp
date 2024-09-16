@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:03:05 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/15 19:56:21 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/16 18:01:13 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ Fixed::~Fixed()
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits() has been called" << std::endl;
 	return (this->fixedPoint);
 };
 
@@ -64,16 +63,10 @@ void	Fixed::setRawBits(int const raw)
 
 float 	Fixed::toFloat(void) const
 {
-	return (getRawBits() << (1 / this->fractPoint));
+	return ((float)getRawBits() / (1 << this->fractPoint));
 };
 
 int 	Fixed::toInt(void) const
 {
 	return (getRawBits() >> 8);
-};
-
-std::ostream &operator<<(std::ostream &os, const Fixed &obj)
-{
-	os << obj.toFloat();
-	return os;
 };
