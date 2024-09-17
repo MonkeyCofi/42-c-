@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:27:51 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/17 14:18:38 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/17 19:56:56 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,26 @@ class Fixed
 		Fixed(const float toFixed);
 		Fixed();
 		~Fixed();
-		Fixed &operator=(Fixed const &obj);
+		
+		/* Operator overloads */
+		Fixed	&operator=(const Fixed &obj);
+		bool	operator==(const Fixed &obj);
+		bool	operator!= (const Fixed &obj);
+		//bool	operator> (const Fixed &obj1, const Fixed &obj2);
+		//bool	operator< (const Fixed &obj1, const Fixed &obj2);
+		//bool	operator<= (const Fixed &obj1, const Fixed &obj2);
+		//bool	operator>= (const Fixed &obj1, const Fixed &obj2);
+		
+		/* Arithmetic overloads */
+		int		operator+(const Fixed &obj);
+		int		operator*(const Fixed &obj);
+		//void	operator-(const Fixed &obj);
+		//void	operator/(const Fixed &obj);
+		
+		/* Increment overloads */
+		Fixed	&operator++(void);
+		Fixed	&operator++(int);
+		
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		

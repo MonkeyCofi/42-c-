@@ -5,22 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 13:28:24 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/17 11:53:56 by pipolint         ###   ########.fr       */
+/*   Created: 2024/09/17 15:18:42 by pipolint          #+#    #+#             */
+/*   Updated: 2024/09/17 20:32:12 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "Fixed.hpp"
 
 int main(void)
 {
-	Animal *animals = new Animal[100];
-	int i = 0;
-	for (; i < 50; i++)
-		animals[i] = Cat();
-	for (; i < 100; i++)
-		animals[i] = Dog();
+	//Fixed a(42.42f);
+	//Fixed b(a);
+	//Fixed c(50);
+
+	//std::cout << "a " << a << std::endl;
+	//std::cout << "b " << b << std::endl;
+	//std::cout << "c " << c + 5 << std::endl;
+
+	//std::cout << ((a == b) ? "True" : "False") << std::endl;
+	Fixed	a;
+
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a++ << std::endl;
 	
+	Fixed b(Fixed(-20) + Fixed(-1));
+	//Fixed	b(Fixed(5.05f) * Fixed(2));
+	std::cout << b << std::endl;
 }

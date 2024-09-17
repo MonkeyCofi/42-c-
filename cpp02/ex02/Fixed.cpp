@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:03:05 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/17 14:16:45 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/17 20:37:47 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Fixed::Fixed()
 	this->fixedPoint = 0;
 };
 
-Fixed &Fixed::operator=(Fixed const &obj)
+Fixed 	&Fixed::operator=(Fixed const &obj)
 {
 	std::cout << "Copy assignment operator has been called" << std::endl;
 	this->fixedPoint = obj.getRawBits();
@@ -70,8 +70,43 @@ int 	Fixed::toInt(void) const
 	return (getRawBits() >> 8);
 };
 
+/* Comparison and relational operations */
 std::ostream &operator<<(std::ostream &os, const Fixed &obj)
 {
 	os << obj.toFloat();
 	return os;
+};
+
+bool	Fixed::operator==(const Fixed &obj)
+{
+	return (this->getRawBits() == obj.getRawBits());
+};
+
+bool	Fixed::operator!=(const Fixed &obj)
+{
+	return (!(this->getRawBits() == obj.getRawBits()));
+};
+
+int		Fixed::operator+(const Fixed &obj)
+{
+	return (this->getRawBits() + obj.getRawBits());
+};
+
+int		Fixed::operator*(const Fixed &obj)
+{
+	float	a = this->getRawBits() ;
+	float	b;
+};
+
+/* Increment and decrement operators */
+Fixed	&Fixed::operator++(void)
+{
+	++this->fixedPoint;
+	return (*this);
+};
+
+Fixed	&Fixed::operator++(int)
+{
+	this->fixedPoint++;
+	return (*this);
 };

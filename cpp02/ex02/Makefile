@@ -1,19 +1,18 @@
-NAME = animal
+NAME = fixedNum
 
 CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = Dog.cpp Cat.cpp Animal.cpp Brain.cpp main.cpp
+SRCS = Fixed.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
-	
+
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-	make clean
 
 all: $(NAME)
 
