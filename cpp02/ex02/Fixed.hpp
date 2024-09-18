@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:27:51 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/17 19:56:56 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/18 17:34:07 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,35 @@ class Fixed
 		Fixed	&operator=(const Fixed &obj);
 		bool	operator==(const Fixed &obj);
 		bool	operator!= (const Fixed &obj);
-		//bool	operator> (const Fixed &obj1, const Fixed &obj2);
-		//bool	operator< (const Fixed &obj1, const Fixed &obj2);
-		//bool	operator<= (const Fixed &obj1, const Fixed &obj2);
-		//bool	operator>= (const Fixed &obj1, const Fixed &obj2);
+		bool	operator< (const Fixed &obj);
+		bool	operator> (const Fixed &obj);
+		bool	operator<= (const Fixed &obj);
+		bool	operator>= (const Fixed &obj);
 		
 		/* Arithmetic overloads */
-		int		operator+(const Fixed &obj);
-		int		operator*(const Fixed &obj);
-		//void	operator-(const Fixed &obj);
-		//void	operator/(const Fixed &obj);
+		float	operator+(const Fixed &obj);
+		float	operator*(const Fixed &obj);
+		float	operator/(const Fixed &obj);
+		float	operator-(const Fixed &obj);
 		
 		/* Increment overloads */
 		Fixed	&operator++(void);
-		Fixed	&operator++(int);
+		Fixed	operator++(int);
+		
+		/* Decrement overloads */
+		Fixed	&operator--(void);
+		Fixed	operator--(int);
 		
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		
 		float 	toFloat(void) const;
 		int 	toInt(void) const;
+		
+		static Fixed &min(Fixed &obj1, Fixed &obj2);
+		static Fixed &max(Fixed &obj1, Fixed &obj2);
+		static const Fixed &min(Fixed const &obj1, Fixed const &obj2);
+		static const Fixed &max(Fixed const &obj1, Fixed const &obj2);
 };
 
 std::ostream &operator<<(std::ostream &os, const Fixed &obj);

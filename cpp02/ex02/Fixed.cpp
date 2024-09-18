@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 18:03:05 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/17 20:37:47 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/18 17:34:03 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,20 +82,39 @@ bool	Fixed::operator==(const Fixed &obj)
 	return (this->getRawBits() == obj.getRawBits());
 };
 
+bool	Fixed::operator<(const Fixed &obj)
+{
+	return (this->getRawBits() < obj.getRawBits());
+};
+
+bool	Fixed::operator>(const Fixed &obj)
+{
+	return (this->getRawBits() > obj.getRawBits());
+};
+
 bool	Fixed::operator!=(const Fixed &obj)
 {
 	return (!(this->getRawBits() == obj.getRawBits()));
 };
 
-int		Fixed::operator+(const Fixed &obj)
+float		Fixed::operator+(const Fixed &obj)
 {
 	return (this->getRawBits() + obj.getRawBits());
 };
 
-int		Fixed::operator*(const Fixed &obj)
+float		Fixed::operator-(const Fixed &obj)
 {
-	float	a = this->getRawBits() ;
-	float	b;
+	return (this->getRawBits() - obj.getRawBits());
+};
+
+float		Fixed::operator*(const Fixed &obj)
+{
+	return (this->toFloat() * obj.toFloat());
+};
+
+float		Fixed::operator/(const Fixed &obj)
+{
+	return (this->toFloat() / obj.toFloat());
 };
 
 /* Increment and decrement operators */
@@ -105,8 +124,51 @@ Fixed	&Fixed::operator++(void)
 	return (*this);
 };
 
-Fixed	&Fixed::operator++(int)
+Fixed	Fixed::operator++(int)
 {
-	this->fixedPoint++;
+	Fixed obj(*this);
+	++this->fixedPoint;
+	return (obj);
+};
+
+Fixed	&Fixed::operator--(void)
+{
+	--this->fixedPoint;
 	return (*this);
 };
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed obj(*this);
+	--this->fixedPoint;
+	return (obj);
+};
+
+Fixed	&Fixed::min(Fixed &obj1, Fixed &obj2)
+{
+	if (obj1 < obj2)
+		return (obj1);
+	return (obj2);
+}
+
+Fixed	&Fixed::max(Fixed &obj1, Fixed &obj2)
+{
+	if (obj1 > obj2)
+		return (obj1);
+	return (obj2);
+}
+
+const Fixed	&Fixed::min(Fixed const &obj1, Fixed const &obj2)
+{
+	if (obj1 < obj2)
+		return (obj1);
+	return (obj2);
+}
+
+
+const Fixed	&Fixed::max(const Fixed &obj1, const Fixed &obj2)
+{
+	if (obj1 > obj2)
+		return (obj1);
+	return (obj2);
+}
