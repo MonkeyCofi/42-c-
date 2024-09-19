@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 13:27:51 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/18 17:34:07 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/19 15:03:52 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include <iostream>
 # include <cmath>
+
+# define RESET "\e[0m"
+# define BLUE "\e[0;34m"
+# define GREEN "\e[0;32m"
+# define YELLOW "\e[1;33m"
+# define RED "\e[0;31m"
+# define CYAN "\e[0;36m"
 
 class Fixed
 {
