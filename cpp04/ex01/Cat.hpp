@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:45:32 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/14 13:00:12 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:02:05 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class	Cat : public Animal
 		Cat(const Cat &obj);
 		Cat	&operator=(const Cat &obj);
 		virtual void	makeSound();
+		Brain	*brainAddress();
 };
 
 #endif

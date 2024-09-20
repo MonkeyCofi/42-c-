@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:41:44 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/17 11:48:58 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:17:43 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ class	Animal
 		Animal(const Animal &obj);
 		virtual void	makeSound();
 		std::string		getType();
+		void			setType(std::string NewType);
 		Animal			&operator=(const Animal &obj);
+		virtual Brain	*brainAddress();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 12:44:44 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/14 13:06:46 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:07:49 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class	Brain
 		~Brain();
 		Brain(const Brain &obj);
 		Brain	&operator=(const Brain &obj);
+		Brain	*returnBrainAddress();
 };
 
 #endif
