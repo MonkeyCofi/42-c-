@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:47:45 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/21 14:17:36 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/21 14:16:53 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,6 @@ Animal::~Animal()
 {
 	std::cout << RED << "Destructor for Animal was called" << RESET << std::endl;
 };
-
-void	Animal::makeSound()
-{
-	std::cout << "Generic animal noises" << std::endl;
-}
 
 std::string	Animal::getType() const
 {

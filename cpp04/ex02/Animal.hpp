@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:41:44 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/21 14:17:22 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/21 14:16:48 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ANIMAL_HPP
 
 # include <iostream>
+# include "Brain.hpp"
 
 # define RESET "\e[0m"
 # define BLUE "\e[0;34m"
@@ -31,9 +32,11 @@ class	Animal
 		virtual ~Animal();
 		Animal(std::string type);
 		Animal(const Animal &obj);
-		Animal	&operator=(const Animal &obj);
-		virtual void		makeSound();
-		std::string	getType() const;
+		virtual void	makeSound() = 0;
+		std::string		getType() const ;
+		void			setType(std::string NewType);
+		Animal			&operator=(const Animal &obj);
+		virtual Brain	*brainAddress();
 };
 
 #endif

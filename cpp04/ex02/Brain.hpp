@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 12:41:44 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/21 14:17:22 by pipolint         ###   ########.fr       */
+/*   Created: 2024/09/14 12:44:44 by pipolint          #+#    #+#             */
+/*   Updated: 2024/09/20 18:07:49 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
 
@@ -22,18 +22,16 @@
 # define RED "\e[0;31m"
 # define CYAN "\e[0;36m"
 
-class	Animal
+class	Brain
 {
-	protected:
-		std::string type;
+	private:
+		std::string ideas[100];
 	public:
-		Animal();
-		virtual ~Animal();
-		Animal(std::string type);
-		Animal(const Animal &obj);
-		Animal	&operator=(const Animal &obj);
-		virtual void		makeSound();
-		std::string	getType() const;
+		Brain();
+		~Brain();
+		Brain(const Brain &obj);
+		Brain	&operator=(const Brain &obj);
+		Brain	*returnBrainAddress();
 };
 
 #endif
