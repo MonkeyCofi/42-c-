@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 15:20:44 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/21 18:59:38 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/21 21:11:42 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <iomanip>
 # include "ICharacter.hpp"
+
+class	ICharacter;
 
 class	AMateria
 {

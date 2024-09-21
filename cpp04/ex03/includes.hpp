@@ -1,40 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   includes.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 18:21:25 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/21 22:23:52 by pipolint         ###   ########.fr       */
+/*   Created: 2024/09/21 20:37:54 by pipolint          #+#    #+#             */
+/*   Updated: 2024/09/21 20:38:21 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#ifndef INCLUDES_HPP
+# define INCLUDES_HPP
 
-Ice::Ice(): AMateria("ice")
-{
-	;
-};
+# include "AMateria.hpp"
+# include "Character.hpp"
+# include "Ice.hpp"
+# include "Cure.hpp"
 
-Ice::~Ice()
-{
-	;
-};
-
-Ice::Ice(const Ice &obj)
-{
-	;
-};
-
-Ice	&Ice::operator=(const Ice &obj)
-{
-	return (*this);
-};
-
-std::string	
-
-void	Ice::use(ICharacter &target)
-{
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-};
+#endif
