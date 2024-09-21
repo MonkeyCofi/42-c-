@@ -18,4 +18,8 @@
 int main(void)
 {
 	Ice test;
+	Ice *pointer_test = new Ice();
+	delete pointer_test;
+
+	ICharacter *charac = new Character("Cloud");
 }

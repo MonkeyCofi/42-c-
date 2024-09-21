@@ -17,13 +17,14 @@
 
 class Ice: public AMateria
 {
-	Ice();
-	~Ice();
-	Ice(const Ice &obj);
-	Ice	&operator=(const Ice &obj);
-	const std::string	&getType() const;
-	void		use(ICharacter &target);
-	AMateria	*clone() const = 0;
+	public:
+		Ice();
+		~Ice();
+		Ice(const Ice &obj);
+		Ice	&operator=(const Ice &obj);
+		const std::string	&getType() const;
+		void		use(ICharacter &target);
+		AMateria	*clone() const;
 };
 
 #endif

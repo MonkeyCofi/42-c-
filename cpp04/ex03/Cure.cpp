@@ -19,16 +19,17 @@ Cure::Cure() : AMateria("cure")
 
 Cure::~Cure()
 {
-	;
+	std::cout << "Destructor for Cure was called" << std::endl;
 };
 
 Cure::Cure(const Cure &obj) : AMateria("ice")
 {
-	;
+	this->m_type = obj.m_type;
 };
 
 Cure	&Cure::operator=(const Cure &obj)
 {
+	this->m_type = obj.m_type;
 	return (*this);
 };
 

@@ -23,7 +23,7 @@ class Cure: public AMateria
 	Cure	&operator=(const Cure &obj);
 	const std::string	&getType() const;
 	void		use(ICharacter &target);
-	AMateria	*clone() const = 0;
+	AMateria	*clone() const;
 };
 
 #endif

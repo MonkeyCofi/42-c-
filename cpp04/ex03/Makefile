@@ -2,7 +2,7 @@ NAME = interface
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
 SRCS = ICharacter.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp main.cpp
 
@@ -12,7 +12,7 @@ OBJS = $(SRCS:.cpp=.o)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 	
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) -fsanitize=address $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

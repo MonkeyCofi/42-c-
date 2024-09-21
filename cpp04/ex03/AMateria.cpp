@@ -17,6 +17,11 @@ AMateria::AMateria(std::string const &type)
 	this->m_type = type;
 };
 
+/* AMateria::AMateria() */
+/* { */
+/* 	std::cout << "AMateria's default constructor was called" << std::endl; */
+/* } */
+
 AMateria::~AMateria()
 {
 	std::cout << "AMateria's destructor was called" << std::endl;
