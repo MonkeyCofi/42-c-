@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 15:20:44 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/21 21:11:42 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/22 16:30:25 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ class	AMateria
 {
 	protected:
 		std::string m_type;
+		AMateria();
 	public:
 		AMateria(std::string const &type);
 		virtual ~AMateria();
-		virtual std::string const 	&getType() const = 0;
+		virtual const std::string 	&getType() const;
 		virtual AMateria			*clone() const = 0;
-		virtual void				use(ICharacter &target) = 0;
+		virtual void				use(ICharacter &target);
 };
 
 #endif

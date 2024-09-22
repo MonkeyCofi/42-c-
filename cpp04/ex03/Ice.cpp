@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 18:21:25 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/21 22:33:28 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/22 18:20:54 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	Ice::use(ICharacter &target)
 
 AMateria	*Ice::clone() const
 {
-	return (NULL);
+	AMateria *ret = new Ice(*this);
+	return (ret);
 }

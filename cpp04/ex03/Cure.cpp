@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:58:31 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/21 22:29:38 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/22 18:21:29 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ const std::string	&Cure::getType() const
 
 AMateria	*Cure::clone() const
 {
-	return (NULL);
+	AMateria *ret = new Cure(*this);
+	return (ret);
 };
 
 void	Cure::use(ICharacter &target)
