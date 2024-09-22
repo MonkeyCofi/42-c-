@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 13:55:51 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/22 18:04:50 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/22 21:10:32 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ class MateriaSource: public IMateriaSource
 		MateriaSource &operator=(const MateriaSource &obj);
 		void		learnMateria(AMateria *);
 		AMateria	*createMateria(std::string const &type);
-}
+};
 
 #endif

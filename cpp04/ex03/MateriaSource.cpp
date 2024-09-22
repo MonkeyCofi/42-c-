@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 18:02:15 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/22 21:07:06 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/22 21:09:36 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,15 @@ MateriaSource::MateriaSource(const MateriaSource &obj)
 {
 	this->m_materias = new AMateria*[4];
 	for (int i = 0; i < 4; i++)
-		m_materias[i] = obj.m_materias[i].clone();
+		this->m_materias[i] = obj.m_materias[i]->clone();
 };
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &obj)
 {
-	;
+	this->m_materias = new AMateria*[4];
+	for (int i = 0; i < 4; i++)
+		this->m_materias[i] = obj.m_materias[i]->clone();
+	return (*this);
 };
 
 void MateriaSource::learnMateria(AMateria *m)

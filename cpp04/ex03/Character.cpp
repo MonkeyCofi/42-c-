@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 20:38:45 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/22 20:44:06 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/22 21:12:14 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,13 @@ void	Character::equip(AMateria *m)
 		m_full = 1;
 		return ;
 	}
-	std::string t = m->getType();
-	m_inventory[i] = m->clone();
-	t.at(0) = (char)toupper(t.at(0));
-	std::cout << this->getName() << " has equipped " << (t == "Ice" ? "an " : "a ") << t << " materia" << std::endl;
+	if (m_inventory[i])
+	{
+		std::string t = m->getType();
+		m_inventory[i] = m->clone();
+		t.at(0) = (char)toupper(t.at(0));
+		std::cout << this->getName() << " has equipped " << (t == "Ice" ? "an " : "a ") << t << " materia" << std::endl;
+	}
 }
 
 void	Character::unequip(int idx)
