@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 18:56:17 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/22 18:47:51 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/22 20:54:52 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int main(void)
 	Sephiroth->equip(pointer_test);
 	Sephiroth->use(1, *Cloud);
 	Zack->use(0, *Cloud);
+	AMateria *temp = Sephiroth->returnMateriaIndex(0);
 	Sephiroth->unequip(0);
 	Sephiroth->use(0, *Zack);
 	Sephiroth->equip(newCure);
@@ -40,6 +41,6 @@ int main(void)
 	Sephiroth->equip(cure);
 	delete (pointer_test);
 	delete (cure);
-	//delete (Cloud);
-	//delete (Zack);
+	delete (Cloud);
+	delete (Zack);
 }
