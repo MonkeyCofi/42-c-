@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 23:59:33 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/23 20:53:23 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/23 22:04:23 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include "Utils.hpp"
 # include <cstdlib>
 # include <iomanip>
-
 
 class PhoneBook
 {
