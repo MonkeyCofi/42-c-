@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 23:59:33 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/23 20:53:23 by pipolint         ###   ########.fr       */
+/*   Created: 2024/09/23 20:50:19 by pipolint          #+#    #+#             */
+/*   Updated: 2024/09/23 20:53:28 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef UTILS_HPP
+# define UTILS_HPP
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+# include <iostream>
+# include "Contact.hpp"
 
-# include "Utils.hpp"
-# include <cstdlib>
-# include <iomanip>
+class Contact;
 
-
-class PhoneBook
-{
-	private:
-		void	print_top_row() const;
-		Contact	contacts[8];
-		bool	full;
-	public:
-		void	add_contact(unsigned short current);
-		void	search_contact(unsigned short index);
-		void	is_full();
-		bool	check_full() const;
-};
+int	valid_input(std::string &str, int num_check);
 
 #endif
