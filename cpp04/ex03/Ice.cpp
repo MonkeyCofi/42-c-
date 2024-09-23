@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 18:21:25 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/22 18:20:54 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:35:34 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Ice::Ice(): AMateria("ice")
 {
-	;
+	std::cout << BLUE << "An Ice Materia has been constructed " << RESET << std::endl;
 };
 
 Ice::~Ice()
 {
-	;
+	std::cout << RED << "Destructor for Ice Materia was called" << RESET << std::endl;
 };
 
 Ice::Ice(const Ice &obj) : AMateria("ice")
@@ -40,11 +40,10 @@ const std::string	&Ice::getType() const
 
 void	Ice::use(ICharacter &target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	std::cout << GREEN << "* shoots an ice bolt at " << target.getName() << " *" << RESET << std::endl;
 };
 
 AMateria	*Ice::clone() const
 {
-	AMateria *ret = new Ice(*this);
-	return (ret);
+	return (new Ice(*this));
 }

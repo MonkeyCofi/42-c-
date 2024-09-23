@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 18:09:43 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/22 20:41:18 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:00:27 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,18 @@ class	Character: public ICharacter
 		bool			m_full;
 		std::string		m_name;
 		AMateria 		**m_inventory;
+		static AMateria	*m_last_dropped;
 	public:
 		Character();
 		~Character();
 		Character(std::string const &name);
 		Character(const Character &obj);
 		Character &operator=(const Character &obj);
-		const std::string	&getName() const;
 		void 				use(int idx, ICharacter& target);
 		void				equip(AMateria *m);
 		void				unequip(int idx);
-		const AMateria		*returnMateriaIndex(int idx) const;
+		static void			deleteLastDropped();
+		const std::string	&getName() const;
 };
 
 #endif

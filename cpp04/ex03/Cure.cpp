@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:58:31 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/22 18:21:29 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:35:02 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Cure::Cure() : AMateria("cure")
 {
-	;
+	std::cout << BLUE <<  "A Cure Materia has been constructed" << RESET << std::endl;
 };
 
 Cure::~Cure()
 {
-	std::cout << "Destructor for Cure was called" << std::endl;
+	std::cout << RED << "Destructor for Cure was called" << RESET << std::endl;
 };
 
 Cure::Cure(const Cure &obj) : AMateria("ice")
@@ -40,11 +40,10 @@ const std::string	&Cure::getType() const
 
 AMateria	*Cure::clone() const
 {
-	AMateria *ret = new Cure(*this);
-	return (ret);
+	return (new Cure(*this));
 };
 
 void	Cure::use(ICharacter &target)
 {
-	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << GREEN << "* heals " << target.getName() << "'s wounds *" << RESET << std::endl;
 };
