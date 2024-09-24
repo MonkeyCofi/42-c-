@@ -6,11 +6,16 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/07 00:00:54 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/23 20:51:43 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:39:39 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+PhoneBook::PhoneBook()
+{
+	this->full = false;
+}
 
 void PhoneBook::add_contact(unsigned short current)
 {
@@ -48,6 +53,7 @@ void	PhoneBook::search_contact(unsigned short index)
 		return ;
 	}
 	print_top_row();
+	(void)index;
 	for (unsigned short i = 0; i < index; i++)
 	{
 		std::cout << std::setw(10) << i << std::right;
@@ -67,7 +73,7 @@ void	PhoneBook::search_contact(unsigned short index)
 	if (!valid_input(input, 1))
 		return ;
 	num = std::atoi(input.c_str());
-	if (num < 0 || num > 8)
+	if (num < 0 || num > 7)
 	{
 		std::cout << "\x1b[31m" <<  "Number is out of range"  << "\x1b[0m" << std::endl;
 		return ;

@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 23:59:33 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/23 22:04:23 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:30:25 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class PhoneBook
 		Contact	contacts[8];
 		bool	full;
 	public:
+		PhoneBook();
 		void	add_contact(unsigned short current);
 		void	search_contact(unsigned short index);
 		void	is_full();
