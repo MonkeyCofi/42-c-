@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 19:28:03 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/23 22:05:02 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/09/24 11:50:46 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ class Contact
 		std::string	m_darkestSecret;
 	public:
 		// all the setters and getters
-		void		setContact();
-		void		setNames();
-		void		setNumber();
-		void		setSecret();
+		int			setContact();
+		int			setNames();
+		int			setNumber();
+		int			setSecret();
 		void		setNonEmpty();
 		bool		isEmpty();
 		std::string	getFirst() const;

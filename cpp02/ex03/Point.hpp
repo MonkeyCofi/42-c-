@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 23:59:33 by pipolint          #+#    #+#             */
-/*   Updated: 2024/09/24 11:54:08 by pipolint         ###   ########.fr       */
+/*   Created: 2024/09/25 21:06:30 by pipolint          #+#    #+#             */
+/*   Updated: 2024/09/25 21:09:14 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef POINT_HPP
+# define POINT_HPP
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+# include "Fixed.hpp"
 
-# include "Utils.hpp"
-# include <cstdlib>
-# include <iomanip>
-
-class PhoneBook
+class	Point
 {
 	private:
-		void	print_top_row() const;
-		Contact	contacts[8];
-		bool	m_full;
+		const Fixed	x;
+		const Fixed	y;
 	public:
-		PhoneBook();
-		int		add_contact(unsigned short current);
-		int		search_contact(unsigned short index);
-		void	is_full();
-		bool	check_full() const;
+		Point();
+		Point(const float x, const float y);
+		~Point();
+		Point(const Point &obj);
+		Point &operator=(const Point &obj);
 };
 
 #endif
