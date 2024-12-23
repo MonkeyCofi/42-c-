@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:38:58 by pipolint          #+#    #+#             */
-/*   Updated: 2024/12/22 15:26:45 by pipolint         ###   ########.fr       */
+/*   Created: 2024/12/22 15:31:23 by pipolint          #+#    #+#             */
+/*   Updated: 2024/12/22 15:33:04 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM
+# define SHRUBBERYCREATIONFORM
 
-#include "AForm.hpp"
-//#include 
+# include "Form.hpp"
+# include "Bureaucrat.hpp"
+# include <fstream>
 
-class	RobotomyRequestForm: public AForm
+class	ShrubberyCreationForm: public Form
 {
 	public:
-		RobotomyRequestForm();
-		~RobotomyRequestForm();
-		RobotomyRequestForm(const RobotomyRequestForm& obj);
-		RobotomyRequestForm&	operator=(const RobotomyRequestForm& obj);
+		ShrubberyCreationForm();
+		~ShrubberyCreationForm();
+		ShrubberyCreationForm(const ShrubberyCreationForm& obj);
+		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& obj);
 		
-		RobotomyRequestForm(std::string target);
+		ShrubberyCreationForm(std::string target);
 		void	actualExecute(Bureaucrat const& executor);
+		class	FileOpenException
+		{
+			public:
+				const char*	what();
+		};
 };
+
 
 #endif

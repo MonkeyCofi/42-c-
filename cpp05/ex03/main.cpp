@@ -6,29 +6,24 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 18:00:41 by pipolint          #+#    #+#             */
-/*   Updated: 2024/12/22 19:31:26 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/12/23 18:54:25 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
-	Bureaucrat Joe("Joe", 73);
-	Bureaucrat Joseline("Joseline", 5);
-	RobotomyRequestForm form("Joe");
-	Joe.signForm(form);
-	Joe.executeForm(form);
-	PresidentialPardonForm joePardon("Joe");
-	Joseline.executeForm(joePardon);
-	Joseline.signForm(joePardon);
-	Joseline.executeForm(joePardon);
-	ShrubberyCreationForm shrub("gardenia");
-	Joseline.signForm(shrub);
-	Joseline.executeForm(shrub);
-	return (0);
+	Intern newGuy;
+	Bureaucrat	Joe("Joe", 150);
+	Form	*form = newGuy.makeForm("shrubbery creation", "gardenia");
+	Joe.signForm(*dynamic_cast<ShrubberyCreationForm*>(form));
+	delete(form);
+	//AForm* form = newGuy.makeForm("horse balls and penis", "test");
+	//(void)form;
 }

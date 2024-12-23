@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*   Form.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:34:59 by pipolint          #+#    #+#             */
-/*   Updated: 2024/12/22 15:30:10 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:53:27 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AFORM_HPP
-# define AFORM_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
 # include <iostream>
 # include <exception>
 # include "Bureaucrat.hpp"
 
-class	AForm
+class	Form
 {
 	private:
 		const std::string	m_name;
@@ -27,10 +27,10 @@ class	AForm
 	protected:
 		const std::string	m_target;
 	public:
-		AForm();
-		AForm(const AForm& form);
-		AForm(std::string name, std::string target, int sign_grade, int exec_grade);
-		virtual ~AForm() = 0;
+		Form();
+		Form(const Form& form);
+		Form(std::string name, std::string target, int sign_grade, int exec_grade);
+		virtual ~Form();
 
 		const std::string	getName() const;
 		const std::string	getTarget() const;
@@ -64,6 +64,6 @@ class	AForm
 		};
 };
 
-std::ostream&	operator<<(std::ostream& os, const AForm& obj);
+std::ostream&	operator<<(std::ostream& os, const Form& obj);
 
 #endif

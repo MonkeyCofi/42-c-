@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 06:22:48 by pipolint          #+#    #+#             */
-/*   Updated: 2024/12/22 20:07:08 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/12/23 13:30:26 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ void	Bureaucrat::signForm(AForm& form)
 	//}
 	//else
 	//{
-	//	std::cout << "\033[31m" << this->m_name << " couldn't sign the form " << form.getName() << " because " \
-	//		<< (this->m_grade < 1 ? " their grade is too high\n" : " their grade is too low\n") << "\033[0m";
+	//	std::cout << "\033[31m" << this->m_name << " couldn't sign the form " << form.getName() << " because "
+	//		\ << (this->m_grade < 1 ? " their grade is too high\n" : " their grade is too low\n") << "\033[0m";
 	//}
 }
 

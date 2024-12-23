@@ -1,6 +1,6 @@
 NAME = forms
 
-SRCS = Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp main.cpp
+SRCS = Bureaucrat.cpp AForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp main.cpp
 
 INC = Bureaucrat.hpp
 
@@ -17,5 +17,6 @@ clean:
 
 fclean:
 	rm -f $(NAME)
+	rm -f *_shrubbery
 
-re: all clean
+re: fclean all

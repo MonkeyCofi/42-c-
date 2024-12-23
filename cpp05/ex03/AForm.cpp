@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:40:58 by pipolint          #+#    #+#             */
-/*   Updated: 2024/12/22 15:30:23 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/12/23 12:49:00 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ AForm::~AForm()
 AForm::AForm(const AForm& form) : m_name(form.m_name), m_signed(form.m_signed), \
 	m_sign_grade(form.m_sign_grade), m_exec_grade(form.m_exec_grade), m_target(form.m_target)
 {
-	;
+	std::cout << "Copy Constructor\n";
 };
 
 // paramterized constructor
