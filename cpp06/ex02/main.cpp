@@ -5,28 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 20:28:22 by pipolint          #+#    #+#             */
-/*   Updated: 2024/12/24 17:57:39 by pipolint         ###   ########.fr       */
+/*   Created: 2024/12/26 19:55:54 by pipolint          #+#    #+#             */
+/*   Updated: 2024/12/26 20:29:55 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-/*
-	check the type of the argument passed
-	for char: if its displayable, display the character
-		else display 'Non displayable'
-	for int: if it overflows, print that the integer overflows
-	for float: check whether its -inf, +inf
-	for double: check wheter its -inf, +inf, or nan
-*/
-
-int main(int ac, char **av)
+Base*	generate(void)
 {
-	if (ac != 2)
-	{
-		std::cout << "Usage: ./cast <str to cast>\n";
-		return (1);
-	} 
-	ScalarConverter::convert(av[1]);
+	time_t	t;
+	srand(time(&t));
+	int	r = rand() % 3;
+}
+
+//void	identify(Base* p)
+//{
+
+//}
+
+int main(void)
+{
+	
 }

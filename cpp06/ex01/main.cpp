@@ -5,28 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 20:28:22 by pipolint          #+#    #+#             */
-/*   Updated: 2024/12/24 17:57:39 by pipolint         ###   ########.fr       */
+/*   Created: 2024/12/26 18:14:53 by pipolint          #+#    #+#             */
+/*   Updated: 2024/12/26 19:08:58 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serialize.hpp"
 
-/*
-	check the type of the argument passed
-	for char: if its displayable, display the character
-		else display 'Non displayable'
-	for int: if it overflows, print that the integer overflows
-	for float: check whether its -inf, +inf
-	for double: check wheter its -inf, +inf, or nan
-*/
-
-int main(int ac, char **av)
+int main(void)
 {
-	if (ac != 2)
-	{
-		std::cout << "Usage: ./cast <str to cast>\n";
-		return (1);
-	} 
-	ScalarConverter::convert(av[1]);
+	Data	data;
+	std::cout << "Original data: " << data.getNum() << "\n";
+	uintptr_t	raw = Serialize::serialize(&data);
+	Data		*recovered = Serialize::deserialize(raw);
+	if (recovered == reinterpret_cast<Data*>(raw))
+		std::cout << "Addresses are the same\n";
+	else
+		std::cout << "Addresses are different\n";
+	std::cout << "Recovered: " << recovered->getNum() << "\n";
 }
