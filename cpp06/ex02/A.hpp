@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 19:54:07 by pipolint          #+#    #+#             */
-/*   Updated: 2024/12/26 19:59:10 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/12/27 12:32:47 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class	A: public Base
 {
-	private:
 	public:
+		~A();
 };
 
 #endif
