@@ -6,7 +6,7 @@
 /*   By: pipolint <pipolint@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 19:06:19 by pipolint          #+#    #+#             */
-/*   Updated: 2024/12/27 19:21:54 by pipolint         ###   ########.fr       */
+/*   Updated: 2024/12/28 14:27:07 by pipolint         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	Array
 		~Array();
 		Array(const Array& arr);
 		Array	&operator=(const Array& arr);
+		Array	&operator[](int index);
 		Array(unsigned int n);
 		unsigned int	size(void) const;
 };
